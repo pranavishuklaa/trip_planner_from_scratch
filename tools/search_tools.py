@@ -16,7 +16,7 @@ class SearchTools():
         top_result_to_return = 4
 
         url = "https://serper.dev/search"
-        payload = json.dump({"q": query})
+        payload = json.dumps({"q": query})
 
         headers = {
             'X-API-KEY': os.environ['SERPER_API_KEY'],
@@ -37,6 +37,6 @@ class SearchTools():
                         f"Sinppet:{result['snippet']}", '\n..........'
                     ]))
                 except KeyError:
-                    next
+                    continue
 
             return '\n'.join(string)

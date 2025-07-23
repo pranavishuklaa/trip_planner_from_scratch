@@ -1,7 +1,8 @@
 from crewai import Agent
 from textwrap import dedent
 # from langchain.llms import OpenAI, Ollama
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
+# from langchain_openai import ChatOpenAI
 from tools.search_tools import SearchTools
 from tools.calculator_tools import CalculatorTools
 
@@ -26,8 +27,8 @@ Goal: Create a 7-day tarvel itineary with detailed per-day plans, incluidng budg
 
 class TravelAgents:
     def __init__(self):
-        self.OpenAIGPT4 = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.7)
-        self.OpenAIGPT4 = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.7)
+        self.ChatGoogleGenerativeAI = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.7)
+        # self.ChatGoogleGenerativeAI = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.7)
         # self.Ollama = Ollama(model="openhermes")
 
     def expert_travel_agent(self):
@@ -43,7 +44,7 @@ class TravelAgents:
              ],
             # allow_delegation=False,
             verbose=True,
-            llm=self.OpenAIGPT4,
+            llm=self.ChatGoogleGenerativeAI,
         )
 
     def city_selection_expert(self):
@@ -55,7 +56,7 @@ class TravelAgents:
                    CalculatorTools.calculate],
             # allow_delegation=False,
             verbose=True,
-            llm=self.OpenAIGPT4,
+            llm=self.ChatGoogleGenerativeAI,
         )
     
     
@@ -68,7 +69,7 @@ class TravelAgents:
                CalculatorTools.calculate],
             # allow_delegation=False,
             verbose=True,
-            llm=self.OpenAIGPT4,
+            llm=self.ChatGoogleGenerativeAI,
         )
 
 

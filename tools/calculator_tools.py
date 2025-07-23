@@ -4,7 +4,7 @@ class CalculatorTools():
 
     @tool("Make a calculation")
 
-    def calculate(operation):
+    def calculate(self, operation):
         """ Useful to perform any mathematical calculations,
         like sum, minus, multiplication, division, etc
         The input to this tool should be a mathematical

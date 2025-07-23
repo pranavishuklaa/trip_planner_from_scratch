@@ -5,14 +5,14 @@ from textwrap import dedent
 from agents import TravelAgents
 from tasks import TravelTasks
 
-from langchain_openai import ChatOpenAI
-
+from langchain_google_genai import ChatGoogleGenerativeAI
 
 from dotenv import load_dotenv 
 load_dotenv()
 
-OpenAIGPT4 = ChatOpenAI(
-    model="gpt-3.5-turbo"
+GeminiPro = ChatGoogleGenerativeAI(
+    model="gemini-pro",
+    temperature=0.7
 )
 
 

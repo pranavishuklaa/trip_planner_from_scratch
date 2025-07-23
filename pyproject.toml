@@ -5,15 +5,15 @@ description = "Simple AI trip planner"
 authors = ["Joao Moura, PS"]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = ">=3.12,<=3.13"
+crewai = "0.28.6"
+langchain = "0.1.17"
+langchain-community = "^0.0.36"
+langchain-google-genai = "^0.0.6"
+google-generativeai = ">=0.3.1,<0.4.0"
+python-dotenv = "^1.0.0"
+pydantic = ">=2.4.2,<3.0.0"
 
-crewai = "^0.11.2"
-langchain = "^0.1.14"
-langchain-openai = "^0.0.5"
-langchainhub = "^0.1.15"
-pydantic = "^2.4"
-python-dotenv = "^1.0.0"   
-setuptools = "^80.9.0"
 
 
 
